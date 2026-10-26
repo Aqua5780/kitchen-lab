@@ -21,7 +21,7 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "KitchenLab",
+  title: "KitchenNadal",
   description: "Cook better through science — grounded answers, not guesswork.",
 };
 

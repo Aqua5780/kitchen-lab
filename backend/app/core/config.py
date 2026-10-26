@@ -58,10 +58,13 @@ class Settings(BaseSettings):
     secret_key: str = "dev-only-secret-change-in-production"
     access_token_expire_minutes: int = 60 * 24 * 7  # one week
 
-    # From the OPENAI_API_KEY env var (never committed to git).
+    # LLM provider configuration. Gemini is the default; OpenAI remains
+    # available for existing deployments.
+    llm_provider: str = "gemini"
+    gemini_api_key: str = ""
     openai_api_key: str = ""
-    embedding_model: str = "text-embedding-3-small"
-    chat_model: str = "gpt-4o-mini"
+    embedding_model: str = "gemini-embedding-001"
+    chat_model: str = "gemini-3.1-flash-lite"
 
     # Unsplash Access Key for recipe cover photos (optional — stock fallback if empty).
     unsplash_access_key: str = ""

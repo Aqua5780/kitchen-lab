@@ -25,7 +25,7 @@ export function SiteNav() {
       aria-label="Main"
     >
       <Link href="/" className="nav-brand">
-        KitchenLab
+        KitchenNadal
       </Link>
       {LINKS.map((link) => (
         <Link

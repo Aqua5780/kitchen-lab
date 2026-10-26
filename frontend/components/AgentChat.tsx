@@ -316,7 +316,7 @@ export function AgentChat() {
         <div className="ask-main">
           <form className="ask-form" onSubmit={onSubmit}>
             <label htmlFor="q" className="sr-only">
-              Ask KitchenLab
+              Ask KitchenNadal
             </label>
             <textarea
               id="q"

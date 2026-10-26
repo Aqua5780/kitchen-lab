@@ -17,6 +17,6 @@ services:
       - key: SECRET_KEY
         generateValue: true # Render generates a long random value
       - key: CORS_ORIGINS
-        value: https://kitchen-lab-tau.vercel.app
+        value: http://localhost:3000 # replace with the Vercel URL after step 3
       - key: STORAGE_BACKEND
         value: local

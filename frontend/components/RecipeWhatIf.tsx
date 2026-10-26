@@ -165,7 +165,7 @@ export function RecipeWhatIf({ recipe }: { recipe: GeneratedRecipe }) {
     <section className="what-if" aria-labelledby="what-if-heading">
       <h3 id="what-if-heading">What if…</h3>
       <p className="field-hint">
-        Drag a slider — salt and scaled grams update from KitchenLab’s
+        Drag a slider — salt and scaled grams update from KitchenNadal’s
         calculators (Python math), not from the language model.
       </p>
 

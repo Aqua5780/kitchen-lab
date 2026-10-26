@@ -8,16 +8,16 @@ import Link from "next/link";
 export default function HomePage() {
   return (
     <main className="home">
-      <section className="hero-bleed" aria-label="KitchenLab">
+      <section className="hero-bleed" aria-label="KitchenNadal">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           className="hero-bleed-media"
-          src="/images/hero.jpg"
-          alt="Fresh ingredients and prepared dishes"
+          src="/images/filipino/lechon.jpg"
+          alt="Filipino lechon"
         />
         <div className="hero-bleed-scrim" aria-hidden />
         <div className="hero-bleed-content">
-          <p className="brand">KitchenLab</p>
+          <p className="brand">KitchenNadal</p>
           <h1 className="tagline">Cook better through science.</h1>
           <p className="lede">
             Grounded answers and science-annotated recipes — not chatbot
@@ -75,8 +75,8 @@ export default function HomePage() {
           <figure className="home-split-media">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/images/pasta.jpg"
-              alt="Plate of pasta with tomato sauce"
+              src="/images/filipino/sinigang.jpg"
+              alt="Filipino pork sinigang"
             />
           </figure>
         </div>
@@ -86,7 +86,7 @@ export default function HomePage() {
         <div className="home-rail home-promise">
           <figure className="home-promise-media">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/images/bread.jpg" alt="Fresh bread and grains" />
+            <img src="/images/filipino/kare-kare.jpg" alt="Filipino kare-kare" />
           </figure>
           <div className="home-promise-copy">
             <h2 id="promise-heading" className="section-heading">

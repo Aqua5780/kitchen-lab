@@ -160,8 +160,8 @@ export default function LabPage() {
       <header className="page-header">
         <h1>Lab</h1>
         <p className="lede">
-          Practice room: science ideas, proven methods, fair A/B tests, and your
-          notes.
+          Lugar para magpraktis: mga ideya sa siyensya, subok na paraan,
+          patas na A/B test, at sarili mong mga tala.
         </p>
       </header>
 
@@ -172,9 +172,9 @@ export default function LabPage() {
         <a href="#notebook">Notebook</a>
       </nav>
       <FeatureGuide
-        title="What is the Lab?"
-        summary="Ask is for conversation. Lab is for reference and practice — like a textbook chapter plus a notebook."
-        when="Come here when you want to study a science idea, learn a method, compare two ways of cooking, or write down what worked at home."
+        title="Ano ang Lab?"
+        summary="Para sa pag-uusap ang Ask. Para sa sanggunian at pagsasanay ang Lab — parang kabanata ng textbook na may notebook."
+        when="Pumunta rito kapag gusto mong mag-aral ng ideyang pang-siyensya, matuto ng paraan, maghambing ng dalawang paraan ng pagluluto, o itala kung ano ang gumana sa bahay."
         steps={[
           "Mechanisms — browse the science library (Maillard, gelatinization…). Each card lists techniques that use it.",
           "Techniques — curated methods (velveting, dry-brining…) with steps + common mistakes.",

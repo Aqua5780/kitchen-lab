@@ -28,7 +28,7 @@ Cook better through science. An AI cooking agent that **teaches**, **generates a
 | ORM & migrations | SQLAlchemy 2, Alembic | Models as Python; schema versioned like code |
 | Database | PostgreSQL 16 + **pgvector** | Tables for users/recipes/etc.; vectors for RAG |
 | Auth | JWT (PyJWT) + bcrypt | Stateless login; passwords stored as hashes only |
-| LLM / embeddings | OpenAI API (`gpt-4o-mini`, `text-embedding-3-small`) | Phrasing + semantic search — **not** facts or math |
+| LLM / embeddings | Gemini API (`gemini-3.1-flash-lite`, `gemini-embedding-001`) | Phrasing + semantic search — **not** facts or math |
 | Tests | pytest | Unit tests + deterministic eval scenarios |
 | CI | GitHub Actions | Runs tests/evals on push and PRs |
 | Photo storage | Local filesystem (`STORAGE_BACKEND=local`) | Same key shape as S3 |
@@ -40,7 +40,7 @@ Cook better through science. An AI cooking agent that **teaches**, **generates a
 | Frontend | **Vercel** | Builds and serves the Next.js application |
 | Backend | **Render** (Docker) | Runs FastAPI, migrations, calculators, and agent workflows |
 | Database | **Neon** Postgres + pgvector | Stores application data and vectors for semantic retrieval |
-| LLM / embeddings | **OpenAI API** | Phrases grounded answers and embeds curated passages |
+| LLM / embeddings | **Gemini API** | Phrases grounded answers and embeds curated passages |
 | Recipe photos | **Unsplash API** | Supplies relevant cover photos with attribution |
 | CI | **GitHub Actions** | Runs tests and deterministic evaluations |
 
@@ -68,7 +68,7 @@ Requires [Docker Desktop](https://www.docker.com/products/docker-desktop/).
 ```bash
 # 1. Secrets (gitignored)
 cp .env.example .env
-# Edit .env and set OPENAI_API_KEY=...
+# Edit .env and set GEMINI_API_KEY=...
 # Optional: UNSPLASH_ACCESS_KEY=... for related recipe cover photos
 # (without it, cookbook cards use local stock images).
 
@@ -106,7 +106,7 @@ docker compose exec backend alembic upgrade head
 
 docker compose exec backend python -m app.seeds.safety_seed
 docker compose exec backend python -m app.seeds.knowledge_seed
-docker compose exec backend python -m app.rag.ingestion          # embed passages (needs OPENAI_API_KEY)
+docker compose exec backend python -m app.rag.ingestion          # embed passages (needs GEMINI_API_KEY when using the default Gemini provider)
 docker compose exec backend python -m app.seeds.symptoms_seed
 docker compose exec backend python -m app.seeds.food_seed
 docker compose exec backend python -m app.seeds.techniques_seed
@@ -158,7 +158,7 @@ backend/
     evals/          # scenario catalog + grader
     kitchen/        # profile personalization
     lab/            # experiment design helpers
-    llm/            # OpenAI client (phrasing only)
+    llm/            # Provider client (Gemini by default; phrasing only)
     rag/            # embeddings + pgvector retrieval
     recipes/        # generate / adapt
     safety/         # temps + allergens
